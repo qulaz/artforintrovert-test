@@ -92,7 +92,7 @@ func main() { //nolint: cyclop
 
 	if cfg.Sentry != nil && cfg.Sentry.DSN != "" {
 		err := sentry.Init(
-			sentry.ClientOptions{ //nolint: exhaustruct
+			sentry.ClientOptions{
 				Dsn:         cfg.Sentry.DSN,
 				Environment: cfg.Sentry.Env,
 				BeforeSend: func(event *sentry.Event, hint *sentry.EventHint) *sentry.Event {
